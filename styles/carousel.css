@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;900&family=Poppins:ital,wght@0,200;1,100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.containerPrimaryText{
+    background:#FFC478 ;
+}
+
+.banner .banner-desc{
+
+}
+
+.containerPrimaryText.bg-gradient{
+    background:#FFC478 ;
+    border-color: black;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel {
+    display: flex;
+    animation: scroll 40s linear infinite;
+  }
+  
+  .carousel-card {
+    flex: 0 0 50%;
+    padding: 20px;
+    background-color:white;
+    scroll-snap-align: start;
+    text-align: center;
+    box-sizing: border-box;
+    
+  }
+  
+  .carousel-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .carousel-card h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .carousel-card p {
+    margin-bottom: 10px;
+  }
+  
+  .carousel-card .stars {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .stars {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .stars span {
+    color: gold;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% * 3)); /* Ajust the number of cards */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .carousel-card {
+      flex: 0 0 100%;
+    }
+  }
+  
+  
+  

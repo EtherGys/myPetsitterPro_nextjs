@@ -1,0 +1,11 @@
+.address, .addressTitle, .contactInfos {
+    font-size: 0.8rem;
+    
+}
+
+@media all and (min-width: 1000px) {
+    .address, .addressTitle, .contactInfos {
+        font-size: 1rem;
+        
+    }
+}

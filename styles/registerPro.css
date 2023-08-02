@@ -1,0 +1,49 @@
+.mainContainer {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-floating > input {
+    background-color: #F0E5D8!important;
+}
+
+h1 {
+    padding-bottom: 15px;
+}
+
+h2 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.checkedInfos {
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.procedureInfos {
+    background-color: #BBDFC8;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 20px 20px 20px;
+}
+
+.row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rowFlex {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.checkboxes {
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+

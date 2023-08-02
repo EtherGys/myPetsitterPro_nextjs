@@ -1,0 +1,149 @@
+:root {
+    --lightYellow : #F0E5D8;
+    --darkYellow : #FFC478;
+    --lightGreen : #BBDFC8;
+    --darkGreen : #3F9B84;
+    --titlesColor: #090B44;
+    --titlesFontFamily: 'Roboto', sans-serif;
+    
+    --h2FontSize: 0.90rem;
+    --h2FontWeight: 500;
+    
+    --h3FontSize: 0.80rem;
+    --h3FontWeight: 400;
+}
+
+/* Body begins after the navbar and ends before footer */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    /* margin-top: 80px;
+    margin-bottom: 80px; */
+    min-height: 100%;
+
+}
+
+.mainContainer {
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+  }
+
+/* Footer and header background color */
+footer, .container-fluid {
+    background-color: var(--darkGreen);
+    text-align: start;
+    
+}
+
+.footer-copyright {
+    padding: 0 10px 0 10px;
+    font-size: 0.5rem;
+}
+
+footer > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.5rem;
+}
+
+/* Navbar background color */
+.offcanvas-header, .offcanvas-body {
+    background-color: var(--lightGreen);
+}
+
+footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 250px;
+    clear:both;
+    padding-top:20px;
+}
+/* Green bootstrap Button with customized style */
+.btn-success{
+    width: 200px;
+    height: 65px;
+    border-radius: 50px;
+    /* Edit the font-size according to the quantity of text in the Btn for good padding */
+    padding: 15px;
+    background-color: var(--darkGreen);
+    box-shadow: 2px 1px 12px rgb(119, 119, 119);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    border-radius: 50%;
+}
+
+/* Customized checkbox bootstrap */
+.form-check-input:focus{
+    box-shadow: 0 0 0 0.25rem #3f9b843a!important;
+    
+}
+
+/* Switch buttons customized in green */
+.form-check-input:checked{
+    background-color: var(--darkGreen) ;
+    border-color: var(--darkGreen) ;
+}
+
+.form-check-input:focus{
+    box-shadow: 0 0 0 0.25rem #3f9b843a;
+    
+}
+
+/* Color for links */
+a {
+    color: #090B44;
+}
+
+h2 {
+    color: var(--titlesColor);
+    font-weight: var(--h2FontWeight);
+    font-size: var(--h2FontSize);
+    font-family: var(--titlesFontFamily);
+}
+
+h3 {
+    color: var(--titlesColor);
+    font-weight: var(--h3FontWeight);
+    font-size: var(--h3FontSize);
+    font-family: var(--titlesFontFamily)
+}
+
+.rgpd, .cgu {
+    margin: 50px 50px 50px 50px;
+}
+
+/*  Variables declaration Desktop */
+@media all and (min-width: 1000px) {
+    :root {
+        --titlesColor: #090B44;
+        --titlesFontFamily: 'Roboto', sans-serif;
+        
+        --h1FontSize: 1.25rem;
+        --h1FontWeight: bold;
+        
+        --h2FontSize: 1rem;
+        --h2FontWeight: 500;
+        
+        --h3FontSize: 0.90rem;
+        --h3FontWeight: 400;
+    }
+    
+    footer > .container, .footer-copyright {
+        padding-bottom: 15px;
+        font-size: 1rem;
+    }
+}

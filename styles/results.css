@@ -1,0 +1,25 @@
+ul > li {
+    list-style: none;
+}
+
+.mainContainer {
+    margin-top: 100px;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+@media (max-width: 1000px) {
+    .btn-success {
+        width: 100px;
+        height: 35px;
+        font-size: 0.8rem;
+        padding-bottom: 30px;
+    }
+    
+    ul > li {
+        font-size: 0.8rem;
+        list-style: none;
+    }
+}
