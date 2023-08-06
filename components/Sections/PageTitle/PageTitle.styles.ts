@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core'
 
-export const usePageTitleStyles = createStyles({
+export const usePageTitleStyles = createStyles((theme) => ({
     h1: {
         color: "#090B44",
         height: "80px",
@@ -12,8 +12,10 @@ export const usePageTitleStyles = createStyles({
         display: "flex", 
         justifyContent: "center",
         alignItems: "center",
-        
+
+        [theme.fn.largerThan('md')]: {
+            width: "80%",
+        },
     },
 
-    // mediaqueries for width : 90% in desktop
-})
+}))

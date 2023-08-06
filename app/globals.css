@@ -13,15 +13,11 @@
     --h3FontWeight: 400;
 }
 
-/* Body begins after the navbar and ends before footer */
-
 html, body {
     height: 100%;
 }
 
 body {
-    /* margin-top: 80px;
-    margin-bottom: 80px; */
     min-height: 100%;
 
 }

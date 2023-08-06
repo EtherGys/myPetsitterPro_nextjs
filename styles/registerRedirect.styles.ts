@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core'
 
-export const useRegisterRedirectStyles = createStyles({
+export const useRegisterRedirectStyles = createStyles((theme) => ({
     btnFlex: {
         marginLeft: "auto",
         marginRight: "auto",
@@ -8,24 +8,16 @@ export const useRegisterRedirectStyles = createStyles({
         flexDirection: "column", 
         alignItems: "center",
         padding: "30px", 
+        
+        [theme.fn.largerThan('md')]: {
+            flexDirection: 'row',
+        },
     },
     
     goToConnectionDiv: {
         paddingTop: "10px",
         paddingBottom: "20px",
         textAlign: "center"
-    }
+    },
     
-    // /* media queries */
-    // @media all and (min-width: 1000px) {
-    //     .btnFlex {
-    //         display: flex,
-    //         flex-direction: row,
-    //     }
-    
-    //     .btnFlexPosition {
-    //         marginRight: 30px,
-    //         marginRight: 30px,
-    //     }
-    // }
-})
+}))

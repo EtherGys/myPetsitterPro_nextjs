@@ -13,17 +13,17 @@ export default function RootStyleRegistry({
   
   useServerInsertedHTML(() => (
     <style
-      data-emotion={
-        `${cache.key} ${Object.keys(cache.inserted).join(" ")}`
-      }
-      dangerouslySetInnerHTML={{
-        __html: Object.values(cache.inserted).join(" "),
-      }}
+    data-emotion={
+      `${cache.key} ${Object.keys(cache.inserted).join(" ")}`
+    }
+    dangerouslySetInnerHTML={{
+      __html: Object.values(cache.inserted).join(" "),
+    }}
     />
-  ));
-
-  return (
-    <CacheProvider value={cache}>
+    ));
+    
+    return (
+      <CacheProvider value={cache}>
       <MantineProvider 
       withGlobalStyles 
       withNormalizeCSS
@@ -34,9 +34,16 @@ export default function RootStyleRegistry({
           'dark-green': ['#3F9B84', '#3F9B84', '#3F9B84', '#3F9B84', '#3F9B84', '#3F9B84', '#3F9B84', '#3F9B84', '#3F9B84', '#3F9B84'],
           'light-green': ['#BBDFC8', '#BBDFC8', '#BBDFC8', '#BBDFC8', '#BBDFC8', '#BBDFC8', '#BBDFC8', '#BBDFC8', '#BBDFC8', '#BBDFC8'],
         },
+        breakpoints: {
+          xs: '30em',
+          sm: '48em',
+          md: '64em',
+          lg: '74em',
+          xl: '90em',
+        },
       }}>
-        {children}
+      {children}
       </MantineProvider>
-    </CacheProvider>
-  )
-}
+      </CacheProvider>
+      )
+    }

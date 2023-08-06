@@ -18,9 +18,6 @@ export function RedirectionButton({text, subtitle, src, href, alt}: props) {
     <a href={href}>
     <button type="button" className={classes.btnLight}>
       <Image src={src} width={120} height={120} alt={alt}/>
-      {/* <Image src={src} width={1200} height={500} alt="Petsitter et animal" /> */}
-
-    {/* <p><img src="{{asset('build/images/logo/icone_maitre.png')}}" alt="image de patte de chien" title="Maitre"></p> */}
     <h2>{text}</h2>
     <h3>{subtitle}</h3>
     </button>

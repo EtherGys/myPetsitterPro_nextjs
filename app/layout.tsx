@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <RootStyleRegistry>
-        <HeaderResponsive links={[{ link:"/", label:"Accueil" },{ link:"#", label:"Créer un compte" },{ link:"/registration", label:"Trouver un professionnel" },{ link:"/registration/redirect", label:"Se connecter" },{ link:"/about", label:"À propos" }]}/>
+        <HeaderResponsive links={[{ link:"/", label:"Accueil" },{ link:"/redirect", label:"Créer un compte" },{ link:"/register", label:"Trouver un professionnel" },{ link:"/login", label:"Se connecter" },{ link:"/about", label:"À propos" }]}/>
         {children}
         </RootStyleRegistry>
         </body>

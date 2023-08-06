@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core'
 
-export const useRegisterButtonStyles = createStyles({
+export const useRegisterButtonStyles = createStyles((theme) => ({
 btnLight: {
     width: "300px",
     height: "255px",
@@ -14,6 +14,11 @@ btnLight: {
     borderWidth: "7px",
     marginTop:"20px",
     marginBottom:"20px",
+    
+    [theme.fn.largerThan('md')]: {
+            marginRight: '100px',
+            marginLeft: '100px',
+    },
 },
 
-})
+}))

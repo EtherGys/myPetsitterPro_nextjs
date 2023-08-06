@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@mantine/core';
+import { Button, Text } from '@mantine/core';
 
 interface props {
   text: string;
@@ -10,8 +10,10 @@ interface props {
 export function MainButton({text, color='dark-green', href}: props) {
   return (
     <a href={href}>
-    <Button color={color} radius="xl">
+    <Button color={color} radius="xl" size='xl' >
+    <Text fz="md">
       {text}
+    </Text>
     </Button>
     </a>
       
