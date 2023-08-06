@@ -6,7 +6,7 @@ import { MainButton } from "@components/Buttons/MainButton";
 import { Flex } from '@mantine/core';
 import MasterLogo from '@logo/icone_maitre.png';
 import PetsitterLogo from '@logo/icone_petsiter.png';
-import { useRegisterRedirectStyles } from '@styles/RegisterRedirect.styles'
+import { useRegisterRedirectStyles } from '@styles/RegisterRedirect.styles';
 
 
 export default function RedirectToRegistration() {
