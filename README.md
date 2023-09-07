@@ -1,5 +1,9 @@
 # myPetsitterPro_nextjs
 <p>
+Uses Next.js & Mantine Library
+</p>
+
+<p>
 myPetsitterPro is a plateform linking professional petsitters and clients in order to simplify bookings, transactions, ...
 </p>
 <br>
