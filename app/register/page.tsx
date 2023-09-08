@@ -16,7 +16,6 @@ export default function Registration() {
         <PageTitle title="Créez votre compte" />
         <ClientRegisterForm/>
         
-        <MainButton text="Je m'inscris" href="#" />
         
         </Flex>
         )
