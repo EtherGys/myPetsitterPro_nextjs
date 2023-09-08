@@ -8,11 +8,13 @@ import { useHomepageStyles } from '@styles/Homepage.styles'
 
 export default function Homepage() {
   const { classes } = useHomepageStyles();
-  const redirectToRegister = "/registration/redirect";
+  const redirectToRegister = "/redirect";
 
   return (
     <Flex className={classes.body} direction="column" align="center">
-        <Image width={1200} height={500} src={HeroPhoto} alt="Petsitter et animal" />
+      <div className={classes.imageDiv}>
+        <Image className={classes.heroImage} width={1200} height={500} src={HeroPhoto} alt="Petsitter et animal" />
+      </div>
       <div className={classes.containerPrimaryText}>
         <h1>PetSitterPRO</h1>
         <p>
@@ -29,6 +31,9 @@ export default function Homepage() {
         </p>
           <MainButton text="M'inscrire" href={redirectToRegister} />
       </div>
+      <div>
+
+   
       <div className={classes.discoveryText}>
         <h2>Découvrez nos services</h2>
         <div>
@@ -65,6 +70,7 @@ export default function Homepage() {
           <MainButton text="Lancer ma recherche" href="#" />
         </div>
       </div>
+      </div>
       <span className={classes.inscriptionText}>
         <h2>Vous proposez un service professionnel de garde d&apos;animaux ?</h2>
         <h2>Venez agrandir notre communauté PetSitterPRO !</h2>
@@ -74,8 +80,8 @@ export default function Homepage() {
           Consequatur voluptates magnam dicta tempora. Corrupti, nesciunt. Saepe, cum quae? Expedita voluptatum assumenda, odio repudiandae reiciendis nostrum deleniti asperiores necessitatibus similique est? Quae amet, dignissimos iste sint dolores eius odit.
         </p>
           <MainButton text="J'inscris mon établissement" href={redirectToRegister} />
-      </span>
-        <h2>Nos clients sont satisfaits</h2>
+        </span>
+        {/* <h2>Nos clients sont satisfaits</h2> */}
     </Flex>
   )
 }

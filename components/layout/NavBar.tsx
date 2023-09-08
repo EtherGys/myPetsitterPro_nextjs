@@ -27,17 +27,24 @@ const useStyles = createStyles((theme) => ({
     dropdown: {
         position: 'absolute',
         top: HEADER_HEIGHT,
-        left: 0,
         right: 0,
         zIndex: 0,
         borderTopRightRadius: 0,
         borderTopLeftRadius: 0,
         borderTopWidth: 0,
         overflow: 'hidden',
+        width:'100%',
         
-        [theme.fn.largerThan('sm')]: {
+        [theme.fn.largerThan('md')]: {
             display: 'none',
         },
+        [theme.fn.smallerThan('md')]: {
+            textAlign:'center',
+        },
+         '@media (min-width: 800px) and (max-width: 1200px)': {
+            width: '40%',
+            right: 0
+          },
     },
     
     header: {
@@ -50,13 +57,13 @@ const useStyles = createStyles((theme) => ({
     },
     
     links: {
-        [theme.fn.smallerThan('sm')]: {
+        [theme.fn.smallerThan('md')]: {
             display: 'none',
         },
     },
     
     burger: {
-        [theme.fn.largerThan('sm')]: {
+        [theme.fn.largerThan('md')]: {
             display: 'none',
         },
     },
@@ -79,6 +86,7 @@ const useStyles = createStyles((theme) => ({
             borderRadius: 0,
             padding: theme.spacing.md,
         },
+
     },
     
     linkActive: {
@@ -95,7 +103,7 @@ interface HeaderResponsiveProps {
 
 export function HeaderResponsive({ links }: HeaderResponsiveProps) {
     const [opened, { toggle, close }] = useDisclosure(false);
-    const [active, setActive] = useState(links[0].link);
+    const [active, setActive] = useState();
     const { classes, cx } = useStyles();
     
     const items = links.map((link) => (
@@ -104,8 +112,8 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
         href={link.link}
         className={cx(classes.link, { [classes.linkActive]: active === link.link })}
         onClick={(event) => {
-            event.preventDefault();
-            setActive(link.link);
+            // event.preventDefault();
+            // setActive(link.link);
             close();
         }}
         >
@@ -117,14 +125,14 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
             <Header height={HEADER_HEIGHT} mb={100} className={classes.root}>
             <Container className={classes.header}>
             <span>
-            <Image src={Logo} alt="myPetsitterPRO logo" width={40} height={45}/>
-            <Image src={NameLogo} alt="myPetsitterPRO name logo" width={200} height={40}/>
+            <a href="/"><Image src={Logo} alt="myPetsitterPRO logo" width={40} height={45}/></a>
+            <a href="/"><Image src={NameLogo} alt="myPetsitterPRO name logo" width={200} height={40}/></a>
             </span>
             <Group spacing={5} className={classes.links}>
             {items}
             </Group>
             
-            <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+            <Burger color='white' opened={opened} onClick={toggle} className={classes.burger} size="sm" />
             
             <Transition transition="pop-top-right" duration={200} mounted={opened}>
             {(styles) => (

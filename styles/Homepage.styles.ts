@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core'
 
-export const useHomepageStyles = createStyles({
+export const useHomepageStyles = createStyles((theme) => ({
   h1: {
     background:'#FFC478',
     padding: '20px',
@@ -9,7 +9,7 @@ export const useHomepageStyles = createStyles({
   containerPrimaryText: {
     background:'#FFC478',
     padding: '20px',
-    width: "90%",
+    width: "100%",
     textAlign: "center"
   },
   
@@ -19,7 +19,22 @@ export const useHomepageStyles = createStyles({
     padding: '20px',
     marginTop: '40px',
     marginBottom: '40px',
-    textAlign: "center"
+    textAlign: "center", 
+    width: '80%',
+    '@media (min-width: 1200px)': {
+      width: '30%',
+      position: 'relative',
+      top: 0,
+      left: 220,
+      zIndex: 1,
+    },
+    '@media (min-width: 1800px)': {
+      width: '20%',
+      position: 'relative',
+      top: 0,
+      left: 220,
+      zIndex: 1,
+    },
   },
   
   discoveryText: {
@@ -27,23 +42,54 @@ export const useHomepageStyles = createStyles({
     borderRadius: '15px',
     padding: '20px',
     marginBottom: '40px',
+    width: '80%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    '@media (min-width: 1200px)': {
+      width: '80%',
+      position: 'relative',
+      left: 60,
+      top: -110,
+    },
   },
   
   inscriptionText: {
     background:'#BBDFC8' ,
-    width:"90%",
     borderRadius: '15px',
     padding: '20px',
     marginBottom: '40px',
-    textAlign: "center"
+    textAlign: "center",
+    width: '80%',
+    '@media (min-width: 1200px)': {
+      width: '80%',
+      position: 'relative',
+      left: 60,
+      top: -110,
+    },
+    '@media (min-width: 1800px)': {
+      width: '30%',
+      position: 'relative',
+      left: 460,
+      top: -260,
+    },
   },
-
+  
   body: {
-    backgroundColor:'#eee',
   },
-
+  
   button: {
     textAlign: "center"
+  },
+  heroImage: {
+    [theme.fn.smallerThan('md')]: {
+      display: 'none',
+    }
+  },
+  imageDiv: {
+    marginTop: -100,
+    textAlign: 'center',
+    background:'#ADC4CE',
+    width: '100%',
   }
   
-})
+}))
