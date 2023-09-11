@@ -10,7 +10,6 @@ const prisma = new PrismaClient();
 
 export const authOptions = {
     adapter: PrismaAdapter(prisma) as Adapter,
-    
     providers: [
         CredentialsProvider({
             name: "credential",
@@ -19,6 +18,7 @@ export const authOptions = {
                 password: {label: "Password", type: "password"},
                 email: {label: "Email", type: "email"},
             },
+            
             async authorize(credentials) {
                 if (!credentials.email || !credentials.password) {
                     throw new Error("credentials email or password is undefined");
@@ -32,23 +32,24 @@ export const authOptions = {
                 
                 if (!user) {
                     throw new Error("not registered");
-
+                    
                 }
                 
                 const passwordsMatch = await bcrypt.compare(credentials.password, user.hashedPassword);
                 if (!passwordsMatch) {
                     throw new Error("not the right password");
                 }
-
-
                 return user;
             }
             
         })
     ],
-    // session: {
-    //     strategy: 'jwt',
-    // },
+    pages: {
+        SignIn: "/login"
+    },
+    session: {
+        strategy: 'jwt'
+    },
     secret: process.env.NEXTAUTH_SECRET,
     debug: process.env.NODE_ENV === "development"
     

@@ -6,10 +6,9 @@ const prisma = new PrismaClient();
 
 export async function POST(request) {
     const body = await request.json();
-    const { name, email, password } = body.data;
-    console.log('api body', body);
+    const { name, email, password, number, street, city, postcode, phone, firstname } = body.data;
     
-    if (!name || !email || !password) {
+    if (!name || !email || !password ) {
         return new NextResponse("missing one of the value", {status: 400});
 
     }
@@ -30,10 +29,17 @@ export async function POST(request) {
         data: {
             email: email,
             name: name,
+            firstname: firstname,
+            phone: phone,
+            number: number,
+            street: street,
+            city: city,
+            postcode: postcode,
             hashedPassword,
 
         }
     });
+console.log('user in route', user);
 
     return NextResponse.json(user)
 }

@@ -5,12 +5,11 @@ import { Session } from '@prisma/client'
 
 interface props {
     children: ReactNode,
-    session?: Session,
 }
 
-const Provider = ({children, session}) => {
+const Provider = ({children}) => {
   return (
-    <SessionProvider {...session !== null ? session={session} : null}>
+    <SessionProvider >
         {children}
         </SessionProvider>
   )

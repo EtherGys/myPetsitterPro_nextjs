@@ -16,11 +16,13 @@ export const useLoginPageStyles = createStyles((theme) => ({
     
     loginButtonDiv: {
         paddingTop: "10vh",
+        textAlign: 'center',
+
     },
     goToLoginDiv: {
         paddingTop: "10px",
         paddingBottom: "20px",
         textAlign: "center"
-    }
+    },
     
 }))
