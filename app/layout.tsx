@@ -1,4 +1,3 @@
-'use client'
 import './globals.css'
 // import '@styles/global.css'
 import type { Metadata } from 'next'
