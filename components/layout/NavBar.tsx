@@ -14,6 +14,7 @@ import { useDisclosure } from '@mantine/hooks';
 import Image from 'next/image'
 import Logo from '@logo/logo_orange_bold_small.png'
 import NameLogo from '@logo/logo_nom_petsitterpro_white.png'
+import { useSession, signOut } from 'next-auth/react';
 
 const HEADER_HEIGHT = rem(60);
 
@@ -41,10 +42,10 @@ const useStyles = createStyles((theme) => ({
         [theme.fn.smallerThan('md')]: {
             textAlign:'center',
         },
-         '@media (min-width: 800px) and (max-width: 1200px)': {
+        '@media (min-width: 800px) and (max-width: 1200px)': {
             width: '40%',
             right: 0
-          },
+        },
     },
     
     header: {
@@ -86,7 +87,7 @@ const useStyles = createStyles((theme) => ({
             borderRadius: 0,
             padding: theme.spacing.md,
         },
-
+        
     },
     
     linkActive: {
@@ -97,15 +98,25 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-interface HeaderResponsiveProps {
-    links: { link: string; label: string }[];
+// interface HeaderResponsiveProps {
+//     links: { link: string; label: string }[];
+// }
+
+const logoutUser = async (e) => {
+    // e.preventDefault()
+    signOut()    
 }
 
-export function HeaderResponsive({ links }: HeaderResponsiveProps) {
+
+const labels = ["Accueil", "Créer un compte", "Trouver un professionnel", "Se connecter", "À propos", "Mon profil", "Déconnexion"]
+
+export function HeaderResponsive() {
+    const {data: session, status} = useSession()
     const [opened, { toggle, close }] = useDisclosure(false);
     const [active, setActive] = useState();
     const { classes, cx } = useStyles();
     
+    const links=[{ link:"/", label:`${labels[0]}` },{ link:"/redirect", label:`${labels[1]}` },{ link:"/register", label:`${labels[2]}` }, { link:"/about", label:`${labels[4]}` }, status === "authenticated" ? { link:"/profile", label:`${labels[5]}` } : { link:"", label:`` }, status === "authenticated" ? { link:"", label:`` } : { link:"/login", label:`${labels[3]}` }]
     const items = links.map((link) => (
         <a
         key={link.label}
@@ -141,6 +152,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
                 </Paper>
                 )}
                 </Transition>
+                { status === "authenticated" ? <button onClick={() => signOut()}>Sign out</button> : null}
                 </Container>
                 </Header>
                 );

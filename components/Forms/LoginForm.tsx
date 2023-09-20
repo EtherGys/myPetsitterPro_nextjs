@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { PasswordInput, TextInput } from '@mantine/core';
+import { MainButton } from '@components/Buttons/MainButton';
 
 
 export default function LoginForm() {
@@ -32,6 +33,11 @@ export default function LoginForm() {
             marginBottom: "10px",
         }}}
         />
+        {/* <div className={classes.loginButtonDiv}> */}
+        <button  type='submit' >
+        Je me connecte
+          </button>
+        {/* </div> */}
         </>
         )
     }
