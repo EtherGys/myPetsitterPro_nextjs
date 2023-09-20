@@ -185,7 +185,9 @@ export default function ClientRegisterForm() {
           }}}
           />
           <div className={classes.button}>
-          <MainButton  type='submit' text="Je m'inscris"  />
+          <button  type='submit' >
+          Je minscris
+          </button>
           </div>
           </form>
           

@@ -34,7 +34,9 @@ export default function LoginForm() {
         }}}
         />
         {/* <div className={classes.loginButtonDiv}> */}
-        <MainButton type="submit" text="Je me connecte" href="#" />
+        <button  type='submit' >
+        Je me connecte
+          </button>
         {/* </div> */}
         </>
         )

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { PageTitle } from "@components/Sections/PageTitle/PageTitle";
 import LoginForm from "@components/Forms/LoginForm";
 import { MainButton } from "@components/Buttons/MainButton";
-import { Flex, PasswordInput, TextInput } from '@mantine/core';
+import { Button, Flex, PasswordInput, TextInput } from '@mantine/core';
 import { useLoginPageStyles } from '@styles/LoginPage.styles'
 import {signIn, useSession, getSession, getProviders, getCsrfToken } from "next-auth/react"
 // import signIn from "next-auth"
@@ -20,17 +20,17 @@ export default function Login() {
     const {data: session, status} = useSession()
     const { classes } = useLoginPageStyles();
     
-
+    
     const loginUser = async (e) => {
         e.preventDefault()
         signIn('credentials', {
             ...data, 
             redirect: false,
         })
-            router.push('/')
+        router.push('/')
+        
+    }
     
-   }
-
     return (
         <Flex direction="column" align="center">
         <PageTitle title='Connexion' />
@@ -42,7 +42,7 @@ export default function Login() {
         size="md"
         value={data.email}
         onChange={(e) => {setData({...data, email: e.target.value})}}
-
+        
         styles={{input: {
             width:"80vw",
             height:"50px",
@@ -56,7 +56,7 @@ export default function Login() {
         size="md"
         value={data.password}
         onChange={(e) => {setData({...data, password: e.target.value})}}
-
+        
         // error="Votre mot de passe ne correspond pas"
         styles={{input: {
             width:"80vw",
@@ -66,7 +66,9 @@ export default function Login() {
         }}}
         />
         <div className={classes.loginButtonDiv}>
-        <MainButton type="submit" text="Je me connecte" href="#" />
+        <button type="submit">
+        Je me connecte
+        </button>
         </div>
         </form>
         <div className={classes.goToLoginDiv}>

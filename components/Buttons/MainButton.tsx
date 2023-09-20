@@ -5,13 +5,12 @@ interface props {
   text: string;
   color?: string;
   href?: string;
-  type: "button" | "submit" | "reset";
 }
 
-export function MainButton({text, color='dark-green', href, type}: props) {
+export function MainButton({text, color='dark-green', href}: props) {
   return (
     <a href={href}>
-    <Button type={type} color={color} radius="xl" size='xl' >
+    <Button type="button" color={color} radius="xl" size='xl' >
     <Text fz="md">
       {text}
     </Text>
